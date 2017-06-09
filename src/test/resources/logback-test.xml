@@ -1,0 +1,14 @@
+<configuration>
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%date %-5level %logger{36} %X{akkaSource} %X{machineId} %X{nodeId} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="org.eclipse.jetty" level="INFO"/>
+
+  <root level="DEBUG">
+    <appender-ref ref="ROLLING"/>
+    <appender-ref ref="STDOUT"/>
+  </root>
+</configuration>
